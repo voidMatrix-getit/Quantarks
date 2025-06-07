@@ -1,0 +1,44 @@
+// Quantarks Use Case Diagram
+digraph {
+	U [label=User shape=actor]
+	S [label=System shape=actor]
+	auth [label="User Authentication"]
+	signup [label="Sign Up"]
+	login [label=Login]
+	logout [label=Logout]
+	user_mgmt [label="User Management"]
+	edit_profile [label="Edit Profile"]
+	change_password [label="Change Password"]
+	search_filter [label="Search/Filter Users"]
+	view_users [label="View User Cards"]
+	messaging [label=Messaging]
+	open_chat [label="Open Chat"]
+	send_messages [label="Send Messages"]
+	share_images [label="Share Images"]
+	navigation [label=Navigation]
+	sidebar [label="Sidebar Options"]
+	U -> signup
+	U -> login
+	U -> logout
+	U -> edit_profile
+	U -> change_password
+	U -> search_filter
+	U -> view_users
+	U -> open_chat
+	U -> send_messages
+	U -> share_images
+	U -> sidebar
+	S -> auth
+	S -> user_mgmt
+	S -> messaging
+	S -> navigation
+	auth -> signup [label=include]
+	auth -> login [label=include]
+	user_mgmt -> edit_profile [label=include]
+	user_mgmt -> change_password [label=include]
+	user_mgmt -> search_filter [label=include]
+	user_mgmt -> view_users [label=include]
+	messaging -> open_chat [label=include]
+	messaging -> send_messages [label=include]
+	send_messages -> share_images [label=extend]
+}
